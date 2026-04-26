@@ -1,104 +1,310 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Nour App — Privacy Policy / سياسة الخصوصية</title>
+<title>نور · Nour — سياسة الخصوصية · Privacy Policy · Política de Privacidad</title>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
 <style>
-  body { font-family: Arial, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; color: #333; }
-  h1 { color: #1D9E75; text-align: center; }
-  h2 { color: #0a1f0c; border-bottom: 1px solid #eee; padding-bottom: 8px; }
-  .arabic { direction: rtl; text-align: right; font-size: 16px; line-height: 1.8; background: #f9f9f9; padding: 20px; border-radius: 8px; margin: 20px 0; }
-  .english { direction: ltr; text-align: left; }
-  .date { text-align: center; color: #888; margin-bottom: 30px; }
-  a { color: #1D9E75; }
+  :root {
+    --green: #1D9E75;
+    --dark: #0a1f0c;
+    --light-bg: #f4f9f6;
+    --border: #d4eade;
+    --text: #1a2e1e;
+    --muted: #5a7a62;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Lato', sans-serif;
+    background: var(--light-bg);
+    color: var(--text);
+  }
+  header {
+    background: var(--dark);
+    padding: 48px 24px 36px;
+    text-align: center;
+  }
+  header h1 {
+    font-family: 'Amiri', serif;
+    font-size: 2.4rem;
+    color: #fff;
+    letter-spacing: 0.02em;
+    margin-bottom: 8px;
+  }
+  header .subtitle {
+    color: var(--green);
+    font-size: 0.9rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+  header .date {
+    color: #8aaa90;
+    font-size: 0.8rem;
+    margin-top: 10px;
+  }
+  .lang-tabs {
+    display: flex;
+    background: #fff;
+    border-bottom: 2px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  }
+  .lang-tab {
+    flex: 1;
+    padding: 14px;
+    text-align: center;
+    cursor: pointer;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--muted);
+    letter-spacing: 0.08em;
+    border-bottom: 3px solid transparent;
+    transition: all 0.2s;
+  }
+  .lang-tab.active {
+    color: var(--green);
+    border-bottom-color: var(--green);
+    background: #f0faf5;
+  }
+  .lang-section { display: none; max-width: 820px; margin: 0 auto; padding: 40px 24px 80px; }
+  .lang-section.active { display: block; }
+  .lang-section[data-lang="ar"] { direction: rtl; font-family: 'Amiri', serif; font-size: 1.1rem; line-height: 2; }
+  .lang-section[data-lang="en"],
+  .lang-section[data-lang="es"] { direction: ltr; }
+  h2 {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--dark);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin: 36px 0 12px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--border);
+  }
+  .lang-section[data-lang="ar"] h2 {
+    font-family: 'Amiri', serif;
+    font-size: 1.2rem;
+    text-transform: none;
+    letter-spacing: 0;
+  }
+  p { margin-bottom: 14px; line-height: 1.8; color: #2a3e2e; }
+  ul { margin: 10px 0 14px 20px; }
+  .lang-section[data-lang="ar"] ul { margin: 10px 20px 14px 0; }
+  li { margin-bottom: 6px; line-height: 1.8; }
+  strong { color: var(--dark); }
+  a { color: var(--green); text-decoration: none; border-bottom: 1px dotted var(--green); }
+  .badge {
+    display: inline-block;
+    background: var(--green);
+    color: #fff;
+    font-size: 0.7rem;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 20px;
+    letter-spacing: 0.08em;
+    margin-right: 6px;
+    vertical-align: middle;
+  }
+  .info-box {
+    background: #e8f5ee;
+    border-right: 4px solid var(--green);
+    padding: 14px 18px;
+    border-radius: 4px;
+    margin: 16px 0;
+    font-size: 0.9rem;
+    color: var(--dark);
+  }
+  .lang-section[data-lang="ar"] .info-box { border-right: none; border-left: 4px solid var(--green); }
+  footer {
+    background: var(--dark);
+    text-align: center;
+    padding: 24px;
+    color: #5a7a62;
+    font-size: 0.8rem;
+  }
+  footer a { color: var(--green); border: none; }
 </style>
 </head>
 <body>
 
-<h1>نور · Nour — Privacy Policy<br>سياسة الخصوصية</h1>
-<p class="date">Last updated / آخر تحديث: April 2026</p>
+<header>
+  <h1>نور · Nour</h1>
+  <div class="subtitle">Privacy Policy · سياسة الخصوصية · Política de Privacidad</div>
+  <div class="date">Last updated · آخر تحديث · Última actualización: April 2026</div>
+</header>
 
-<div class="english">
-<h2>English</h2>
-
-<h2>1. Introduction</h2>
-<p>Nour App ("we", "our", or "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, and safeguard your information when you use our mobile application Nour · نور.</p>
-
-<h2>2. Information We Collect</h2>
-<p><strong>Location Data:</strong> We request access to your device location solely to calculate accurate Islamic prayer times for your geographical area. Location data is processed locally on your device and is never transmitted to our servers.</p>
-<p><strong>Usage Data:</strong> We collect anonymous usage statistics through Google AdMob and RevenueCat to improve the app experience. This data does not identify you personally.</p>
-<p><strong>Purchase Information:</strong> If you subscribe to Nour Premium or Nour Familia, purchase transactions are processed by Google Play. We do not store your payment information.</p>
-<p><strong>Local Storage:</strong> The app stores your preferences, prayer completion records, tasbih counts, and child profiles locally on your device using AsyncStorage. This data never leaves your device.</p>
-
-<h2>3. How We Use Your Information</h2>
-<ul>
-<li>To calculate prayer times based on your location</li>
-<li>To send prayer time notifications (only if enabled)</li>
-<li>To process subscription purchases</li>
-<li>To display relevant advertisements (free tier only)</li>
-<li>To improve app performance and user experience</li>
-</ul>
-
-<h2>4. Third-Party Services</h2>
-<p><strong>Google AdMob:</strong> Used to display advertisements in the free tier. AdMob may collect device identifiers and usage data. See Google's Privacy Policy at https://policies.google.com/privacy</p>
-<p><strong>RevenueCat:</strong> Used to manage in-app subscriptions. See RevenueCat's Privacy Policy at https://www.revenuecat.com/privacy</p>
-<p><strong>Nominatim (OpenStreetMap):</strong> Used to convert coordinates to city names. No personal data is stored by this service.</p>
-
-<h2>5. Children's Privacy</h2>
-<p>The Nour Familia plan includes features designed for children under parental supervision. We do not knowingly collect personal information from children. The child profile feature stores data locally on the device only.</p>
-
-<h2>6. Data Security</h2>
-<p>All personal preferences and usage data are stored locally on your device. We do not operate servers that store your personal data.</p>
-
-<h2>7. Your Rights</h2>
-<p>You may delete all app data at any time by uninstalling the application. To opt out of personalized ads, use your device's advertising settings.</p>
-
-<h2>8. Contact Us</h2>
-<p>If you have questions about this Privacy Policy, please contact us at: <a href="mailto:nourapp.contact@gmail.com">nourapp.contact@gmail.com</a></p>
-
-<h2>9. Changes to This Policy</h2>
-<p>We may update this Privacy Policy from time to time. We will notify you of any changes by updating the date at the top of this page.</p>
+<div class="lang-tabs">
+  <div class="lang-tab active" onclick="switchLang('ar')">العربية</div>
+  <div class="lang-tab" onclick="switchLang('en')">English</div>
+  <div class="lang-tab" onclick="switchLang('es')">Español</div>
 </div>
 
-<hr>
+<!-- ═══════════════════════════════ ÁRABE ════════════════════════════════════ -->
+<div class="lang-section active" data-lang="ar">
 
-<div class="arabic">
-<h2>العربية</h2>
+  <h2>١. المقدمة</h2>
+  <p>تطبيق نور ("نحن" أو "التطبيق") ملتزم بحماية خصوصيتك. توضح سياسة الخصوصية هذه كيفية جمع معلوماتك واستخدامها وحمايتها عند استخدام تطبيق نور · Nour على هاتفك.</p>
+  <p>باستخدامك للتطبيق، فإنك توافق على الشروط الواردة في هذه السياسة.</p>
 
-<h2>١. المقدمة</h2>
-<p>تلتزم تطبيق نور بحماية خصوصيتك. توضح سياسة الخصوصية هذه كيفية جمع معلوماتك واستخدامها وحمايتها عند استخدام تطبيق نور.</p>
+  <h2>٢. المعلومات التي نجمعها</h2>
+  <p><strong>بيانات الحساب:</strong> عند إنشاء حساب الوالد، نجمع عنوان بريدك الإلكتروني واسمك. تُخزَّن هذه البيانات بشكل آمن في Firebase Authentication.</p>
+  <p><strong>بيانات الموقع الجغرافي:</strong> نطلب الوصول إلى موقع جهازك فقط لحساب أوقات الصلاة الإسلامية الدقيقة لمنطقتك. تتم معالجة بيانات الموقع محلياً على جهازك ولا تُرسَل إلى خوادمنا أبداً.</p>
+  <p><strong>بيانات الاستخدام:</strong> نخزّن في قاعدة بياناتنا (Firebase Firestore) سجلات الصلاة، عدادات التسبيح، تقدّم برنامج التعلّم، وملفات الأطفال المرتبطة بحسابك.</p>
+  <p><strong>معلومات الاشتراك:</strong> إذا اشتركت في الخطة العائلية، تتم معالجة المدفوعات بواسطة Google Play. لا نخزّن بيانات بطاقتك الائتمانية. تُدار الاشتراكات عبر RevenueCat.</p>
+  <p><strong>ملفات الأطفال:</strong> تُخزَّن ملفات الأطفال في قاعدة بياناتنا مرتبطة بحساب الوالد. يصل إليها الطفل عبر رمز دخول مؤقت تولّده أنت. لا يُطلب من الطفل بريد إلكتروني أو كلمة مرور.</p>
 
-<h2>٢. المعلومات التي نجمعها</h2>
-<p><strong>بيانات الموقع:</strong> نطلب الوصول إلى موقع جهازك فقط لحساب أوقات الصلاة الإسلامية الدقيقة لمنطقتك الجغرافية. تتم معالجة بيانات الموقع محلياً على جهازك ولا تُرسل إلى خوادمنا أبداً.</p>
-<p><strong>بيانات الاستخدام:</strong> نجمع إحصائيات استخدام مجهولة الهوية من خلال Google AdMob وRevenueCat لتحسين تجربة التطبيق. لا تتعرف هذه البيانات عليك شخصياً.</p>
-<p><strong>معلومات الشراء:</strong> إذا اشتركت في نور بريميوم أو نور عائلة، تتم معالجة المعاملات بواسطة Google Play. نحن لا نخزن معلومات الدفع الخاصة بك.</p>
-<p><strong>التخزين المحلي:</strong> يخزن التطبيق تفضيلاتك وسجلات الصلاة وعدادات التسبيح وملفات الأطفال محلياً على جهازك. هذه البيانات لا تغادر جهازك أبداً.</p>
+  <h2>٣. كيف نستخدم معلوماتك</h2>
+  <ul>
+    <li>لحساب أوقات الصلاة بناءً على موقعك الجغرافي</li>
+    <li>لإرسال إشعارات أوقات الصلاة (فقط إذا فعّلتها)</li>
+    <li>لحفظ سجلات الصلاة وتقدّم التعلّم ومشاركتها مع الوالد</li>
+    <li>لإدارة اشتراكك في الخطة العائلية</li>
+    <li>لتحسين أداء التطبيق وتجربة المستخدم</li>
+  </ul>
 
-<h2>٣. كيف نستخدم معلوماتك</h2>
-<ul>
-<li>لحساب أوقات الصلاة بناءً على موقعك</li>
-<li>لإرسال إشعارات أوقات الصلاة (فقط إذا كانت مفعّلة)</li>
-<li>لمعالجة مشتريات الاشتراك</li>
-<li>لعرض الإعلانات ذات الصلة (الطبقة المجانية فقط)</li>
-<li>لتحسين أداء التطبيق وتجربة المستخدم</li>
-</ul>
+  <h2>٤. خدمات الطرف الثالث</h2>
+  <p><strong>Firebase (Google):</strong> نستخدم Firebase Authentication لتسجيل الدخول، وFirebase Firestore لتخزين البيانات. راجع سياسة خصوصية Google على <a href="https://policies.google.com/privacy">policies.google.com/privacy</a></p>
+  <p><strong>RevenueCat:</strong> تُستخدَم لإدارة اشتراكات التطبيق داخل Google Play. راجع سياستهم على <a href="https://www.revenuecat.com/privacy">revenuecat.com/privacy</a></p>
+  <p><strong>Nominatim (OpenStreetMap):</strong> تُستخدَم لتحويل الإحداثيات الجغرافية إلى أسماء مدن. لا تُخزَّن أي بيانات شخصية لديهم.</p>
 
-<h2>٤. خدمات الطرف الثالث</h2>
-<p><strong>Google AdMob:</strong> تُستخدم لعرض الإعلانات في الطبقة المجانية.</p>
-<p><strong>RevenueCat:</strong> تُستخدم لإدارة اشتراكات التطبيق.</p>
-<p><strong>Nominatim:</strong> تُستخدم لتحويل الإحداثيات إلى أسماء مدن.</p>
+  <h2>٥. خصوصية الأطفال</h2>
+  <div class="info-box">تطبيق نور مصمَّم للاستخدام العائلي تحت إشراف الوالدين. لا نجمع معلومات شخصية من الأطفال مباشرة.</div>
+  <p>يصل الطفل إلى التطبيق عبر رمز مؤقت يولّده الوالد. لا يُطلب من الطفل تقديم أي بيانات شخصية. جميع بيانات نشاط الطفل مرتبطة بحساب الوالد ومرئية له فقط.</p>
 
-<h2>٥. خصوصية الأطفال</h2>
-<p>يتضمن نور عائلة ميزات مصممة للأطفال تحت إشراف الوالدين. لا نجمع معلومات شخصية من الأطفال عن قصد. تُخزن بيانات ملف الطفل محلياً على الجهاز فقط.</p>
+  <h2>٦. أمان البيانات</h2>
+  <p>نستخدم Firebase لتأمين بياناتك بتشفير في النقل وفي التخزين. يصل إلى بيانات كل مستخدم هو فقط، ويتحكم في ذلك نظام قواعد الأمان في Firebase.</p>
 
-<h2>٦. حقوقك</h2>
-<p>يمكنك حذف جميع بيانات التطبيق في أي وقت عن طريق إلغاء تثبيت التطبيق.</p>
+  <h2>٧. حقوقك</h2>
+  <ul>
+    <li>يمكنك حذف حسابك وجميع بياناتك بالتواصل معنا</li>
+    <li>يمكنك إلغاء اشتراكك في أي وقت من إعدادات Google Play</li>
+    <li>يمكنك تعطيل الإشعارات من إعدادات الهاتف</li>
+  </ul>
 
-<h2>٧. تواصل معنا</h2>
-<p>إذا كان لديك أسئلة حول سياسة الخصوصية، يرجى التواصل معنا على: <a href="mailto:nourapp.contact@gmail.com">nourapp.contact@gmail.com</a></p>
+  <h2>٨. تواصل معنا</h2>
+  <p>إذا كان لديك أي سؤال حول هذه السياسة، تواصل معنا على: <a href="mailto:nourappdigital@gmail.com">nourappdigital@gmail.com</a></p>
+
+  <h2>٩. التعديلات على هذه السياسة</h2>
+  <p>قد نُحدِّث هذه السياسة من وقت لآخر. سنُخطرك بأي تغييرات جوهرية عبر التطبيق أو البريد الإلكتروني.</p>
 
 </div>
+
+<!-- ═══════════════════════════════ INGLÉS ═══════════════════════════════════ -->
+<div class="lang-section" data-lang="en">
+
+  <h2>1. Introduction</h2>
+  <p>Nour App ("we", "our", or "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, and safeguard your information when you use our mobile application Nour · نور.</p>
+  <p>By using the app, you agree to the terms described in this policy.</p>
+
+  <h2>2. Information We Collect</h2>
+  <p><strong>Account Data:</strong> When you create a parent account, we collect your email address and name. This data is stored securely in Firebase Authentication.</p>
+  <p><strong>Location Data:</strong> We request access to your device location solely to calculate accurate Islamic prayer times for your area. Location data is processed locally on your device and is never transmitted to our servers.</p>
+  <p><strong>Usage Data:</strong> We store in our database (Firebase Firestore) your prayer records, tasbih counts, learning progress, and child profiles linked to your account.</p>
+  <p><strong>Subscription Information:</strong> If you subscribe to the Family Plan, payments are processed by Google Play. We do not store your payment card details. Subscriptions are managed via RevenueCat.</p>
+  <p><strong>Child Profiles:</strong> Child profiles are stored in our database linked to the parent account. Children access the app via a temporary code generated by the parent. No email address or password is required from the child.</p>
+
+  <h2>3. How We Use Your Information</h2>
+  <ul>
+    <li>To calculate prayer times based on your location</li>
+    <li>To send prayer time notifications (only if enabled by you)</li>
+    <li>To save prayer records and learning progress, visible to the parent</li>
+    <li>To manage your Family Plan subscription</li>
+    <li>To improve app performance and user experience</li>
+  </ul>
+
+  <h2>4. Third-Party Services</h2>
+  <p><strong>Firebase (Google):</strong> We use Firebase Authentication for login and Firebase Firestore for data storage. See Google's Privacy Policy at <a href="https://policies.google.com/privacy">policies.google.com/privacy</a></p>
+  <p><strong>RevenueCat:</strong> Used to manage in-app subscriptions through Google Play. See their policy at <a href="https://www.revenuecat.com/privacy">revenuecat.com/privacy</a></p>
+  <p><strong>Nominatim (OpenStreetMap):</strong> Used to convert GPS coordinates to city names. No personal data is stored by this service.</p>
+
+  <h2>5. Children's Privacy</h2>
+  <div class="info-box">Nour is designed for family use under parental supervision. We do not knowingly collect personal information directly from children.</div>
+  <p>Children access the app through a temporary code generated by the parent. No personal data is required from the child. All child activity data is linked to the parent account and visible only to the parent.</p>
+
+  <h2>6. Data Security</h2>
+  <p>We use Firebase to secure your data with encryption in transit and at rest. Each user's data is accessible only by them, enforced by Firebase Security Rules.</p>
+
+  <h2>7. Your Rights</h2>
+  <ul>
+    <li>You may delete your account and all associated data by contacting us</li>
+    <li>You may cancel your subscription at any time from Google Play settings</li>
+    <li>You may disable notifications from your device settings</li>
+  </ul>
+
+  <h2>8. Contact Us</h2>
+  <p>If you have questions about this Privacy Policy, contact us at: <a href="mailto:nourappdigital@gmail.com">nourappdigital@gmail.com</a></p>
+
+  <h2>9. Changes to This Policy</h2>
+  <p>We may update this Privacy Policy from time to time. We will notify you of any material changes via the app or by email.</p>
+
+</div>
+
+<!-- ═══════════════════════════════ ESPAÑOL ══════════════════════════════════ -->
+<div class="lang-section" data-lang="es">
+
+  <h2>1. Introducción</h2>
+  <p>Nour App ("nosotros") está comprometida con la protección de tu privacidad. Esta Política de Privacidad explica cómo recopilamos, usamos y protegemos tu información cuando usas nuestra aplicación móvil Nour · نور.</p>
+  <p>Al usar la app, aceptas los términos descritos en esta política.</p>
+
+  <h2>2. Información que recopilamos</h2>
+  <p><strong>Datos de cuenta:</strong> Al crear una cuenta de padre/madre, recopilamos tu dirección de correo electrónico y nombre. Estos datos se almacenan de forma segura en Firebase Authentication.</p>
+  <p><strong>Datos de ubicación:</strong> Solicitamos acceso a la ubicación de tu dispositivo únicamente para calcular los horarios de oración islámicos precisos para tu zona. Los datos de ubicación se procesan localmente en tu dispositivo y nunca se transmiten a nuestros servidores.</p>
+  <p><strong>Datos de uso:</strong> Almacenamos en nuestra base de datos (Firebase Firestore) tus registros de rezo, conteos de tasbih, progreso de aprendizaje y perfiles de hijos vinculados a tu cuenta.</p>
+  <p><strong>Información de suscripción:</strong> Si te suscribes al Plan Familia, los pagos son procesados por Google Play. No almacenamos los datos de tu tarjeta de pago. Las suscripciones se gestionan a través de RevenueCat.</p>
+  <p><strong>Perfiles de hijos:</strong> Los perfiles de hijos se almacenan en nuestra base de datos vinculados a la cuenta del padre/madre. El niño accede a la app mediante un código temporal generado por el padre. No se requiere correo electrónico ni contraseña del niño.</p>
+
+  <h2>3. Cómo usamos tu información</h2>
+  <ul>
+    <li>Para calcular los horarios de oración según tu ubicación</li>
+    <li>Para enviar notificaciones de oración (solo si las has activado)</li>
+    <li>Para guardar registros de rezo y progreso de aprendizaje, visibles para el padre/madre</li>
+    <li>Para gestionar tu suscripción al Plan Familia</li>
+    <li>Para mejorar el rendimiento y la experiencia de usuario de la app</li>
+  </ul>
+
+  <h2>4. Servicios de terceros</h2>
+  <p><strong>Firebase (Google):</strong> Usamos Firebase Authentication para el inicio de sesión y Firebase Firestore para el almacenamiento de datos. Ver la Política de Privacidad de Google en <a href="https://policies.google.com/privacy">policies.google.com/privacy</a></p>
+  <p><strong>RevenueCat:</strong> Usado para gestionar las suscripciones dentro de Google Play. Ver su política en <a href="https://www.revenuecat.com/privacy">revenuecat.com/privacy</a></p>
+  <p><strong>Nominatim (OpenStreetMap):</strong> Usado para convertir coordenadas GPS en nombres de ciudades. Este servicio no almacena datos personales.</p>
+
+  <h2>5. Privacidad de los niños</h2>
+  <div class="info-box">Nour está diseñada para uso familiar bajo supervisión parental. No recopilamos intencionadamente información personal directamente de menores.</div>
+  <p>Los niños acceden a la app mediante un código temporal generado por el padre/madre. No se requiere ningún dato personal del niño. Toda la actividad del niño está vinculada a la cuenta del padre/madre y solo es visible para él/ella.</p>
+
+  <h2>6. Seguridad de los datos</h2>
+  <p>Usamos Firebase para proteger tus datos con cifrado en tránsito y en reposo. Los datos de cada usuario son accesibles solo por él mismo, garantizado por las Reglas de Seguridad de Firebase.</p>
+
+  <h2>7. Tus derechos</h2>
+  <ul>
+    <li>Puedes eliminar tu cuenta y todos los datos asociados contactándonos</li>
+    <li>Puedes cancelar tu suscripción en cualquier momento desde los ajustes de Google Play</li>
+    <li>Puedes desactivar las notificaciones desde los ajustes de tu dispositivo</li>
+  </ul>
+
+  <h2>8. Contacto</h2>
+  <p>Si tienes preguntas sobre esta Política de Privacidad, contáctanos en: <a href="mailto:nourappdigital@gmail.com">nourappdigital@gmail.com</a></p>
+
+  <h2>9. Cambios en esta política</h2>
+  <p>Podemos actualizar esta Política de Privacidad ocasionalmente. Te notificaremos de cualquier cambio relevante a través de la app o por correo electrónico.</p>
+
+</div>
+
+<footer>
+  <p>نور · Nour &nbsp;·&nbsp; <a href="mailto:nourappdigital@gmail.com">nourappdigital@gmail.com</a> &nbsp;·&nbsp; © 2026</p>
+</footer>
+
+<script>
+function switchLang(lang) {
+  document.querySelectorAll('.lang-tab').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.lang-section').forEach(s => s.classList.remove('active'));
+  document.querySelector('.lang-tab[onclick*="' + lang + '"]').classList.add('active');
+  document.querySelector('.lang-section[data-lang="' + lang + '"]').classList.add('active');
+  document.documentElement.setAttribute('dir', lang === 'ar' ? 'rtl' : 'ltr');
+}
+</script>
 
 </body>
 </html>
