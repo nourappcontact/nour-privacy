@@ -96,18 +96,6 @@
   li { margin-bottom: 6px; line-height: 1.8; }
   strong { color: var(--dark); }
   a { color: var(--green); text-decoration: none; border-bottom: 1px dotted var(--green); }
-  .badge {
-    display: inline-block;
-    background: var(--green);
-    color: #fff;
-    font-size: 0.7rem;
-    font-weight: 700;
-    padding: 2px 8px;
-    border-radius: 20px;
-    letter-spacing: 0.08em;
-    margin-right: 6px;
-    vertical-align: middle;
-  }
   .info-box {
     background: #e8f5ee;
     border-right: 4px solid var(--green);
@@ -133,7 +121,7 @@
 <header>
   <h1>نور · Nour</h1>
   <div class="subtitle">Privacy Policy · سياسة الخصوصية · Política de Privacidad</div>
-  <div class="date">Last updated · آخر تحديث · Última actualización: April 2026</div>
+  <div class="date">Last updated · آخر تحديث · Última actualización: May 2026</div>
 </header>
 
 <div class="lang-tabs">
@@ -151,22 +139,30 @@
 
   <h2>٢. المعلومات التي نجمعها</h2>
   <p><strong>بيانات الحساب:</strong> عند إنشاء حساب الوالد، نجمع عنوان بريدك الإلكتروني واسمك. تُخزَّن هذه البيانات بشكل آمن في Firebase Authentication.</p>
-  <p><strong>بيانات الموقع الجغرافي:</strong> نطلب الوصول إلى موقع جهازك فقط لحساب أوقات الصلاة الإسلامية الدقيقة لمنطقتك. تتم معالجة بيانات الموقع محلياً على جهازك ولا تُرسَل إلى خوادمنا أبداً.</p>
+  <p><strong>بيانات الموقع الجغرافي:</strong> نطلب الوصول إلى موقع جهازك لحساب أوقات الصلاة الإسلامية الدقيقة لمنطقتك. تتم معالجة بيانات الموقع محلياً على جهازك ولا تُرسَل إلى خوادمنا.</p>
+  <p><strong>البحث عن المساجد:</strong> عند استخدامك لميزة المساجد القريبة، يُرسَل موقعك إلى واجهة برمجة تطبيقات Google Places للحصول على نتائج ذات صلة. تخضع هذه العملية لسياسة خصوصية Google.</p>
   <p><strong>بيانات الاستخدام:</strong> نخزّن في قاعدة بياناتنا (Firebase Firestore) سجلات الصلاة، عدادات التسبيح، تقدّم برنامج التعلّم، وملفات الأطفال المرتبطة بحسابك.</p>
+  <p><strong>سجل الصدقات:</strong> تُخزَّن المبالغ والملاحظات المتعلقة بالصدقات التي تسجّلها في Firebase Firestore مرتبطةً بحسابك. لا نشارك هذه البيانات مع أطراف ثالثة.</p>
+  <p><strong>الرسائل التحفيزية:</strong> تُخزَّن الرسائل التي يرسلها الوالد إلى الطفل في Firebase Firestore ولا تكون مرئية إلا لأفراد الأسرة.</p>
+  <p><strong>إشعارات الدفع:</strong> نخزّن رمز الجهاز (FCM) لإرسال إشعارات أوقات الصلاة والرسائل العائلية. يمكنك تعطيلها في أي وقت من إعدادات الجهاز.</p>
   <p><strong>معلومات الاشتراك:</strong> إذا اشتركت في الخطة العائلية، تتم معالجة المدفوعات بواسطة Google Play. لا نخزّن بيانات بطاقتك الائتمانية. تُدار الاشتراكات عبر RevenueCat.</p>
   <p><strong>ملفات الأطفال:</strong> تُخزَّن ملفات الأطفال في قاعدة بياناتنا مرتبطة بحساب الوالد. يصل إليها الطفل عبر رمز دخول مؤقت تولّده أنت. لا يُطلب من الطفل بريد إلكتروني أو كلمة مرور.</p>
 
   <h2>٣. كيف نستخدم معلوماتك</h2>
   <ul>
     <li>لحساب أوقات الصلاة بناءً على موقعك الجغرافي</li>
+    <li>لعرض المساجد القريبة من موقعك</li>
     <li>لإرسال إشعارات أوقات الصلاة (فقط إذا فعّلتها)</li>
     <li>لحفظ سجلات الصلاة وتقدّم التعلّم ومشاركتها مع الوالد</li>
+    <li>لتخزين سجل الصدقات والرسائل العائلية</li>
     <li>لإدارة اشتراكك في الخطة العائلية</li>
     <li>لتحسين أداء التطبيق وتجربة المستخدم</li>
   </ul>
 
   <h2>٤. خدمات الطرف الثالث</h2>
   <p><strong>Firebase (Google):</strong> نستخدم Firebase Authentication لتسجيل الدخول، وFirebase Firestore لتخزين البيانات. راجع سياسة خصوصية Google على <a href="https://policies.google.com/privacy">policies.google.com/privacy</a></p>
+  <p><strong>Firebase Cloud Messaging (FCM):</strong> يُستخدَم لإرسال إشعارات الدفع. راجع سياسة خصوصية Google على <a href="https://policies.google.com/privacy">policies.google.com/privacy</a></p>
+  <p><strong>Google Places API:</strong> تُستخدَم لعرض المساجد القريبة من موقعك. راجع سياسة خصوصية Google على <a href="https://policies.google.com/privacy">policies.google.com/privacy</a></p>
   <p><strong>RevenueCat:</strong> تُستخدَم لإدارة اشتراكات التطبيق داخل Google Play. راجع سياستهم على <a href="https://www.revenuecat.com/privacy">revenuecat.com/privacy</a></p>
   <p><strong>Nominatim (OpenStreetMap):</strong> تُستخدَم لتحويل الإحداثيات الجغرافية إلى أسماء مدن. لا تُخزَّن أي بيانات شخصية لديهم.</p>
 
@@ -201,22 +197,30 @@
 
   <h2>2. Information We Collect</h2>
   <p><strong>Account Data:</strong> When you create a parent account, we collect your email address and name. This data is stored securely in Firebase Authentication.</p>
-  <p><strong>Location Data:</strong> We request access to your device location solely to calculate accurate Islamic prayer times for your area. Location data is processed locally on your device and is never transmitted to our servers.</p>
+  <p><strong>Location Data:</strong> We request access to your device location to calculate accurate Islamic prayer times for your area. Location data is processed locally on your device and is never transmitted to our servers.</p>
+  <p><strong>Mosque Search:</strong> When you use the nearby mosques feature, your location is sent to the Google Places API to retrieve relevant results. This query is subject to Google's privacy policy.</p>
   <p><strong>Usage Data:</strong> We store in our database (Firebase Firestore) your prayer records, tasbih counts, learning progress, and child profiles linked to your account.</p>
+  <p><strong>Sadaqah Log:</strong> Charity amounts and notes you record are stored in Firebase Firestore linked to your account. We do not share this data with third parties.</p>
+  <p><strong>Motivational Messages:</strong> Messages sent by the parent to the child are stored in Firebase Firestore and are visible only to family members.</p>
+  <p><strong>Push Notifications:</strong> We store a device token (FCM) to send you prayer notifications and family messages. You can disable these at any time from your device settings.</p>
   <p><strong>Subscription Information:</strong> If you subscribe to the Family Plan, payments are processed by Google Play. We do not store your payment card details. Subscriptions are managed via RevenueCat.</p>
   <p><strong>Child Profiles:</strong> Child profiles are stored in our database linked to the parent account. Children access the app via a temporary code generated by the parent. No email address or password is required from the child.</p>
 
   <h2>3. How We Use Your Information</h2>
   <ul>
     <li>To calculate prayer times based on your location</li>
+    <li>To display mosques near your location</li>
     <li>To send prayer time notifications (only if enabled by you)</li>
     <li>To save prayer records and learning progress, visible to the parent</li>
+    <li>To store sadaqah records and family messages</li>
     <li>To manage your Family Plan subscription</li>
     <li>To improve app performance and user experience</li>
   </ul>
 
   <h2>4. Third-Party Services</h2>
   <p><strong>Firebase (Google):</strong> We use Firebase Authentication for login and Firebase Firestore for data storage. See Google's Privacy Policy at <a href="https://policies.google.com/privacy">policies.google.com/privacy</a></p>
+  <p><strong>Firebase Cloud Messaging (FCM):</strong> Used to deliver push notifications. See Google's Privacy Policy at <a href="https://policies.google.com/privacy">policies.google.com/privacy</a></p>
+  <p><strong>Google Places API:</strong> Used to display mosques near your location. See Google's Privacy Policy at <a href="https://policies.google.com/privacy">policies.google.com/privacy</a></p>
   <p><strong>RevenueCat:</strong> Used to manage in-app subscriptions through Google Play. See their policy at <a href="https://www.revenuecat.com/privacy">revenuecat.com/privacy</a></p>
   <p><strong>Nominatim (OpenStreetMap):</strong> Used to convert GPS coordinates to city names. No personal data is stored by this service.</p>
 
@@ -251,22 +255,30 @@
 
   <h2>2. Información que recopilamos</h2>
   <p><strong>Datos de cuenta:</strong> Al crear una cuenta de padre/madre, recopilamos tu dirección de correo electrónico y nombre. Estos datos se almacenan de forma segura en Firebase Authentication.</p>
-  <p><strong>Datos de ubicación:</strong> Solicitamos acceso a la ubicación de tu dispositivo únicamente para calcular los horarios de oración islámicos precisos para tu zona. Los datos de ubicación se procesan localmente en tu dispositivo y nunca se transmiten a nuestros servidores.</p>
+  <p><strong>Datos de ubicación:</strong> Solicitamos acceso a la ubicación de tu dispositivo para calcular los horarios de oración islámicos precisos para tu zona. Los datos de ubicación se procesan localmente en tu dispositivo y nunca se transmiten a nuestros servidores.</p>
+  <p><strong>Búsqueda de mezquitas:</strong> Cuando usas la función de mezquitas cercanas, tu ubicación se envía a la API de Google Places para obtener resultados relevantes. Esta consulta está sujeta a la política de privacidad de Google.</p>
   <p><strong>Datos de uso:</strong> Almacenamos en nuestra base de datos (Firebase Firestore) tus registros de rezo, conteos de tasbih, progreso de aprendizaje y perfiles de hijos vinculados a tu cuenta.</p>
+  <p><strong>Registro de Sadaqah:</strong> Los importes y notas de caridad que registras se almacenan en Firebase Firestore vinculados a tu cuenta. No compartimos estos datos con terceros.</p>
+  <p><strong>Mensajes motivadores:</strong> Los mensajes que el padre/madre envía al hijo se almacenan en Firebase Firestore y son visibles únicamente para los miembros de la familia.</p>
+  <p><strong>Notificaciones push:</strong> Almacenamos un token de dispositivo (FCM) para enviarte notificaciones de oración y mensajes familiares. Puedes desactivarlas en cualquier momento desde los ajustes del dispositivo.</p>
   <p><strong>Información de suscripción:</strong> Si te suscribes al Plan Familia, los pagos son procesados por Google Play. No almacenamos los datos de tu tarjeta de pago. Las suscripciones se gestionan a través de RevenueCat.</p>
   <p><strong>Perfiles de hijos:</strong> Los perfiles de hijos se almacenan en nuestra base de datos vinculados a la cuenta del padre/madre. El niño accede a la app mediante un código temporal generado por el padre. No se requiere correo electrónico ni contraseña del niño.</p>
 
   <h2>3. Cómo usamos tu información</h2>
   <ul>
     <li>Para calcular los horarios de oración según tu ubicación</li>
+    <li>Para mostrar mezquitas cercanas a tu ubicación</li>
     <li>Para enviar notificaciones de oración (solo si las has activado)</li>
     <li>Para guardar registros de rezo y progreso de aprendizaje, visibles para el padre/madre</li>
+    <li>Para almacenar el registro de sadaqah y los mensajes familiares</li>
     <li>Para gestionar tu suscripción al Plan Familia</li>
     <li>Para mejorar el rendimiento y la experiencia de usuario de la app</li>
   </ul>
 
   <h2>4. Servicios de terceros</h2>
   <p><strong>Firebase (Google):</strong> Usamos Firebase Authentication para el inicio de sesión y Firebase Firestore para el almacenamiento de datos. Ver la Política de Privacidad de Google en <a href="https://policies.google.com/privacy">policies.google.com/privacy</a></p>
+  <p><strong>Firebase Cloud Messaging (FCM):</strong> Usado para el envío de notificaciones push. Ver la Política de Privacidad de Google en <a href="https://policies.google.com/privacy">policies.google.com/privacy</a></p>
+  <p><strong>Google Places API:</strong> Usada para mostrar mezquitas cercanas a tu ubicación. Ver la Política de Privacidad de Google en <a href="https://policies.google.com/privacy">policies.google.com/privacy</a></p>
   <p><strong>RevenueCat:</strong> Usado para gestionar las suscripciones dentro de Google Play. Ver su política en <a href="https://www.revenuecat.com/privacy">revenuecat.com/privacy</a></p>
   <p><strong>Nominatim (OpenStreetMap):</strong> Usado para convertir coordenadas GPS en nombres de ciudades. Este servicio no almacena datos personales.</p>
 
