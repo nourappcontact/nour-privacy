@@ -37,6 +37,8 @@
   a { color: var(--green); text-decoration: none; border-bottom: 1px dotted var(--green); }
   .info-box { background: #e8f5ee; border-right: 4px solid var(--green); padding: 14px 18px; border-radius: 4px; margin: 16px 0; font-size: 0.9rem; color: var(--dark); }
   .lang-section[data-lang="ar"] .info-box { border-right: none; border-left: 4px solid var(--green); }
+  .warn-box { background: #fdf3e7; border-right: 4px solid #d98a2b; padding: 14px 18px; border-radius: 4px; margin: 16px 0; font-size: 0.9rem; color: #5a3d12; }
+  .lang-section[data-lang="ar"] .warn-box { border-right: none; border-left: 4px solid #d98a2b; }
   footer { background: var(--dark); text-align: center; padding: 24px; color: #5a7a62; font-size: 0.8rem; }
   footer a { color: var(--green); border: none; }
 </style>
@@ -46,7 +48,7 @@
 <header>
   <h1>نور · Nour</h1>
   <div class="subtitle">Privacy Policy · سياسة الخصوصية · Política de Privacidad</div>
-  <div class="date">Last updated · آخر تحديث · Última actualización: May 2026</div>
+  <div class="date">Last updated · آخر تحديث · Última actualización: June 2026</div>
 </header>
 
 <div class="lang-tabs">
@@ -70,8 +72,8 @@
   <p><strong>جرة صدقة الطفل:</strong> الأعمال الطيبة والتبرعات التي يسجّلها الطفل في جرة صدقته تُخزَّن في Firebase Firestore مرتبطةً بملف الطفل ومرئية للوالد فقط.</p>
   <p><strong>الرسائل التحفيزية:</strong> تُخزَّن الرسائل التي يرسلها الوالد إلى الطفل في Firebase Firestore ولا تكون مرئية إلا لأفراد الأسرة.</p>
   <p><strong>إشعارات الدفع:</strong> نخزّن رمز الجهاز (FCM) لإرسال إشعارات أوقات الصلاة والرسائل العائلية. يمكنك تعطيلها في أي وقت من إعدادات الجهاز.</p>
-  <p><strong>معلومات الاشتراك:</strong> إذا اشتركت في الخطة العائلية، تتم معالجة المدفوعات بواسطة Google Play. لا نخزّن بيانات بطاقتك الائتمانية. تُدار الاشتراكات عبر RevenueCat.</p>
-  <p><strong>ملفات الأطفال:</strong> تُخزَّن ملفات الأطفال في قاعدة بياناتنا مرتبطة بحساب الوالد. يصل إليها الطفل عبر رمز دخول مؤقت تولّده أنت. لا يُطلب من الطفل بريد إلكتروني أو كلمة مرور.</p>
+  <p><strong>معلومات الاشتراك:</strong> إذا اشتركت في خطة مدفوعة، تتم معالجة المدفوعات بواسطة Google Play. لا نخزّن بيانات بطاقتك الائتمانية. تُدار الاشتراكات عبر RevenueCat.</p>
+  <p><strong>ملفات الأطفال:</strong> تُخزَّن ملفات الأطفال في قاعدة بياناتنا مرتبطة بحساب الوالد. يصل إليها الطفل عبر رمز دخول يولّده أنت. لا يُطلب من الطفل بريد إلكتروني أو كلمة مرور.</p>
 
   <h2>٣. كيف نستخدم معلوماتك</h2>
   <ul>
@@ -80,7 +82,7 @@
     <li>لإرسال إشعارات أوقات الصلاة (فقط إذا فعّلتها)</li>
     <li>لحفظ سجلات الصلاة وتقدّم التعلّم ومشاركتها مع الوالد</li>
     <li>لتخزين سجل الصدقات وجرة صدقة الطفل والرسائل العائلية</li>
-    <li>لإدارة اشتراكك في الخطة العائلية</li>
+    <li>لإدارة اشتراكك المدفوع</li>
     <li>لتحسين أداء التطبيق وتجربة المستخدم</li>
   </ul>
 
@@ -93,22 +95,28 @@
 
   <h2>٥. خصوصية الأطفال</h2>
   <div class="info-box">تطبيق نور مصمَّم للاستخدام العائلي تحت إشراف الوالدين. لا نجمع معلومات شخصية من الأطفال مباشرة.</div>
-  <p>يصل الطفل إلى التطبيق عبر رمز مؤقت يولّده الوالد. لا يُطلب من الطفل تقديم أي بيانات شخصية. جميع بيانات نشاط الطفل مرتبطة بحساب الوالد ومرئية له فقط.</p>
+  <p>يصل الطفل إلى التطبيق عبر رمز يولّده الوالد. لا يُطلب من الطفل تقديم أي بيانات شخصية. جميع بيانات نشاط الطفل مرتبطة بحساب الوالد ومرئية له فقط.</p>
 
   <h2>٦. أمان البيانات</h2>
   <p>نستخدم Firebase لتأمين بياناتك بتشفير في النقل وفي التخزين. يصل إلى بيانات كل مستخدم هو فقط، ويتحكم في ذلك نظام قواعد الأمان في Firebase.</p>
 
-  <h2>٧. حقوقك</h2>
+  <h2>٧. حذف الحساب والبيانات</h2>
+  <p>يمكنك حذف حسابك مباشرةً من داخل التطبيق عبر <strong>الإعدادات ← حذف الحساب</strong>. لأمانك، نطلب إعادة إدخال كلمة المرور قبل الحذف، ونحذّرك بأن هذا الإجراء لا يمكن التراجع عنه.</p>
+  <p>عند الحذف، تُمحى نهائياً: حساب الوالد، وجميع ملفات الأطفال المرتبطة وتقدّمهم بالكامل (الصلاة، التعلّم، الألعاب، التسبيح، جرة الصدقة، الإنجازات)، والموقع، ورموز دخول الأطفال، والإشعارات، ورمز الجهاز.</p>
+  <div class="warn-box"><strong>تنبيه مهم:</strong> حذف حسابك لا يُلغي اشتراكك في Google Play تلقائياً. يجب إلغاء الاشتراك بشكل منفصل من متجر Google Play لإيقاف التجديد.</div>
+  <p>للشفافية: قد نحتفظ بإحصاءات استخدام مجمَّعة ومجهولة الهوية (لا تحتوي على أي بيانات شخصية). كما أن أي بيانات مخزَّنة محلياً على جهازك تبقى حتى إلغاء تثبيت التطبيق.</p>
+
+  <h2>٨. حقوقك</h2>
   <ul>
-    <li>يمكنك حذف حسابك وجميع بياناتك بالتواصل معنا</li>
+    <li>يمكنك حذف حسابك وجميع بياناتك من داخل التطبيق في أي وقت</li>
     <li>يمكنك إلغاء اشتراكك في أي وقت من إعدادات Google Play</li>
     <li>يمكنك تعطيل الإشعارات من إعدادات الهاتف</li>
   </ul>
 
-  <h2>٨. تواصل معنا</h2>
+  <h2>٩. تواصل معنا</h2>
   <p>إذا كان لديك أي سؤال حول هذه السياسة، تواصل معنا على: <a href="mailto:contact@nourappdigital.com">contact@nourappdigital.com</a></p>
 
-  <h2>٩. التعديلات على هذه السياسة</h2>
+  <h2>١٠. التعديلات على هذه السياسة</h2>
   <p>قد نُحدِّث هذه السياسة من وقت لآخر. سنُخطرك بأي تغييرات جوهرية عبر التطبيق أو البريد الإلكتروني.</p>
 </div>
 
@@ -127,8 +135,8 @@
   <p><strong>Child's Sadaqah Jar:</strong> Acts of kindness and donations recorded by the child in their Sadaqah Jar are stored in Firebase Firestore linked to the child's profile and visible only to the parent.</p>
   <p><strong>Motivational Messages:</strong> Messages sent by the parent to the child are stored in Firebase Firestore and are visible only to family members.</p>
   <p><strong>Push Notifications:</strong> We store a device token (FCM) to send you prayer notifications and family messages. You can disable these at any time from your device settings.</p>
-  <p><strong>Subscription Information:</strong> If you subscribe to the Family Plan, payments are processed by Google Play. We do not store your payment card details. Subscriptions are managed via RevenueCat.</p>
-  <p><strong>Child Profiles:</strong> Child profiles are stored in our database linked to the parent account. Children access the app via a temporary code generated by the parent. No email address or password is required from the child.</p>
+  <p><strong>Subscription Information:</strong> If you subscribe to a paid plan, payments are processed by Google Play. We do not store your payment card details. Subscriptions are managed via RevenueCat.</p>
+  <p><strong>Child Profiles:</strong> Child profiles are stored in our database linked to the parent account. Children access the app via a code generated by the parent. No email address or password is required from the child.</p>
 
   <h2>3. How We Use Your Information</h2>
   <ul>
@@ -137,7 +145,7 @@
     <li>To send prayer time notifications (only if enabled by you)</li>
     <li>To save prayer records and learning progress, visible to the parent</li>
     <li>To store sadaqah records, child's Sadaqah Jar and family messages</li>
-    <li>To manage your Family Plan subscription</li>
+    <li>To manage your paid subscription</li>
     <li>To improve app performance and user experience</li>
   </ul>
 
@@ -150,22 +158,28 @@
 
   <h2>5. Children's Privacy</h2>
   <div class="info-box">Nour is designed for family use under parental supervision. We do not knowingly collect personal information directly from children.</div>
-  <p>Children access the app through a temporary code generated by the parent. No personal data is required from the child. All child activity data is linked to the parent account and visible only to the parent.</p>
+  <p>Children access the app through a code generated by the parent. No personal data is required from the child. All child activity data is linked to the parent account and visible only to the parent.</p>
 
   <h2>6. Data Security</h2>
   <p>We use Firebase to secure your data with encryption in transit and at rest. Each user's data is accessible only by them, enforced by Firebase Security Rules.</p>
 
-  <h2>7. Your Rights</h2>
+  <h2>7. Account &amp; Data Deletion</h2>
+  <p>You can delete your account directly from within the app via <strong>Settings → Delete account</strong>. For your security, we ask you to re-enter your password before deletion, and we warn you that this action cannot be undone.</p>
+  <p>Upon deletion, the following are permanently erased: the parent account, all linked child profiles and their full progress (prayers, learning, games, tasbih, Sadaqah Jar, achievements), location, child access codes, notifications, and device token.</p>
+  <div class="warn-box"><strong>Important:</strong> Deleting your account does not automatically cancel your Google Play subscription. You must cancel the subscription separately from the Google Play Store to stop renewals.</div>
+  <p>For transparency: we may retain aggregated, anonymous usage statistics (containing no personal data). Any data stored locally on your device also remains until you uninstall the app.</p>
+
+  <h2>8. Your Rights</h2>
   <ul>
-    <li>You may delete your account and all associated data by contacting us</li>
+    <li>You may delete your account and all associated data from within the app at any time</li>
     <li>You may cancel your subscription at any time from Google Play settings</li>
     <li>You may disable notifications from your device settings</li>
   </ul>
 
-  <h2>8. Contact Us</h2>
+  <h2>9. Contact Us</h2>
   <p>If you have questions about this Privacy Policy, contact us at: <a href="mailto:contact@nourappdigital.com">contact@nourappdigital.com</a></p>
 
-  <h2>9. Changes to This Policy</h2>
+  <h2>10. Changes to This Policy</h2>
   <p>We may update this Privacy Policy from time to time. We will notify you of any material changes via the app or by email.</p>
 </div>
 
@@ -184,8 +198,8 @@
   <p><strong>Jarra de Sadaqah del niño:</strong> Los actos de bondad y donaciones que el niño registra en su Jarra de Sadaqah se almacenan en Firebase Firestore vinculados al perfil del niño y son visibles únicamente para el padre/madre.</p>
   <p><strong>Mensajes motivadores:</strong> Los mensajes que el padre/madre envía al hijo se almacenan en Firebase Firestore y son visibles únicamente para los miembros de la familia.</p>
   <p><strong>Notificaciones push:</strong> Almacenamos un token de dispositivo (FCM) para enviarte notificaciones de oración y mensajes familiares. Puedes desactivarlas en cualquier momento desde los ajustes del dispositivo.</p>
-  <p><strong>Información de suscripción:</strong> Si te suscribes al Plan Familia, los pagos son procesados por Google Play. No almacenamos los datos de tu tarjeta de pago. Las suscripciones se gestionan a través de RevenueCat.</p>
-  <p><strong>Perfiles de hijos:</strong> Los perfiles de hijos se almacenan en nuestra base de datos vinculados a la cuenta del padre/madre. El niño accede a la app mediante un código temporal generado por el padre. No se requiere correo electrónico ni contraseña del niño.</p>
+  <p><strong>Información de suscripción:</strong> Si te suscribes a un plan de pago, los pagos son procesados por Google Play. No almacenamos los datos de tu tarjeta de pago. Las suscripciones se gestionan a través de RevenueCat.</p>
+  <p><strong>Perfiles de hijos:</strong> Los perfiles de hijos se almacenan en nuestra base de datos vinculados a la cuenta del padre/madre. El niño accede a la app mediante un código generado por el padre. No se requiere correo electrónico ni contraseña del niño.</p>
 
   <h2>3. Cómo usamos tu información</h2>
   <ul>
@@ -194,7 +208,7 @@
     <li>Para enviar notificaciones de oración (solo si las has activado)</li>
     <li>Para guardar registros de rezo y progreso de aprendizaje, visibles para el padre/madre</li>
     <li>Para almacenar el registro de sadaqah, la Jarra de Sadaqah del niño y los mensajes familiares</li>
-    <li>Para gestionar tu suscripción al Plan Familia</li>
+    <li>Para gestionar tu suscripción de pago</li>
     <li>Para mejorar el rendimiento y la experiencia de usuario de la app</li>
   </ul>
 
@@ -207,22 +221,28 @@
 
   <h2>5. Privacidad de los niños</h2>
   <div class="info-box">Nour está diseñada para uso familiar bajo supervisión parental. No recopilamos intencionadamente información personal directamente de menores.</div>
-  <p>Los niños acceden a la app mediante un código temporal generado por el padre/madre. No se requiere ningún dato personal del niño. Toda la actividad del niño está vinculada a la cuenta del padre/madre y solo es visible para él/ella.</p>
+  <p>Los niños acceden a la app mediante un código generado por el padre/madre. No se requiere ningún dato personal del niño. Toda la actividad del niño está vinculada a la cuenta del padre/madre y solo es visible para él/ella.</p>
 
   <h2>6. Seguridad de los datos</h2>
   <p>Usamos Firebase para proteger tus datos con cifrado en tránsito y en reposo. Los datos de cada usuario son accesibles solo por él mismo, garantizado por las Reglas de Seguridad de Firebase.</p>
 
-  <h2>7. Tus derechos</h2>
+  <h2>7. Eliminación de cuenta y datos</h2>
+  <p>Puedes eliminar tu cuenta directamente desde dentro de la app en <strong>Ajustes → Eliminar cuenta</strong>. Por tu seguridad, te pedimos reintroducir tu contraseña antes del borrado, y te avisamos de que esta acción no se puede deshacer.</p>
+  <p>Al eliminarla, se borran de forma permanente: la cuenta del padre/madre, todos los perfiles de hijos vinculados y su progreso completo (rezos, aprendizaje, juegos, tasbih, Jarra de Sadaqah, logros), la ubicación, los códigos de acceso de los hijos, las notificaciones y el token del dispositivo.</p>
+  <div class="warn-box"><strong>Importante:</strong> Eliminar tu cuenta no cancela automáticamente tu suscripción de Google Play. Debes cancelar la suscripción por separado desde la Google Play Store para detener las renovaciones.</div>
+  <p>Por transparencia: podemos conservar estadísticas de uso agregadas y anónimas (sin ningún dato personal). Los datos almacenados localmente en tu dispositivo también permanecen hasta que desinstales la app.</p>
+
+  <h2>8. Tus derechos</h2>
   <ul>
-    <li>Puedes eliminar tu cuenta y todos los datos asociados contactándonos</li>
+    <li>Puedes eliminar tu cuenta y todos los datos asociados desde dentro de la app en cualquier momento</li>
     <li>Puedes cancelar tu suscripción en cualquier momento desde los ajustes de Google Play</li>
     <li>Puedes desactivar las notificaciones desde los ajustes de tu dispositivo</li>
   </ul>
 
-  <h2>8. Contacto</h2>
+  <h2>9. Contacto</h2>
   <p>Si tienes preguntas sobre esta Política de Privacidad, contáctanos en: <a href="mailto:contact@nourappdigital.com">contact@nourappdigital.com</a></p>
 
-  <h2>9. Cambios en esta política</h2>
+  <h2>10. Cambios en esta política</h2>
   <p>Podemos actualizar esta Política de Privacidad ocasionalmente. Te notificaremos de cualquier cambio relevante a través de la app o por correo electrónico.</p>
 </div>
 
